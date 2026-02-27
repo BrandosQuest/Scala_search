@@ -6,13 +6,21 @@ Obiettivo: ricostruzione percorso e aggiornamento costo migliore.
 
 def set_parent(parent, child, p):
     """TODO 1: salva parent[child] = p."""
-    raise NotImplementedError("TODO 1")
+    #parent.update({child: p})
+    parent[child] = p
+    #raise NotImplementedError("TODO 1")
 
 
 def reconstruct(parent, goal):
     """TODO 2: ricostruisci path fino a parent None.
     Esempio: A<-B<-C (goal C) -> [A,B,C]
     """
+    list = [goal]
+    while parent.get(goal) is not None:
+        goal = parent.get(goal)
+        list.append(goal)
+    list.reverse()
+    return list
     raise NotImplementedError("TODO 2")
 
 
