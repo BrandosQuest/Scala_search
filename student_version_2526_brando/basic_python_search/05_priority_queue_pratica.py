@@ -8,16 +8,25 @@ from queue import PriorityQueue
 
 def push_all(items_with_priority):
     """TODO 1: crea PriorityQueue e inserisci tuple (priority, item)."""
+    priorityQueue = PriorityQueue()
+    for item in items_with_priority:
+        priorityQueue.put(item)
+    return priorityQueue
     raise NotImplementedError("TODO 1")
 
 
 def pop_all_ordered(pq):
     """TODO 2: estrai tutto in ordine e ritorna solo item."""
+    ordered_items = []
+    while not pq.empty():
+        ordered_items.append(pq.get()[1])
+    return ordered_items
     raise NotImplementedError("TODO 2")
 
 
 def best_first(items_with_priority):
     """TODO 3: helper che combina TODO1+TODO2."""
+    return pop_all_ordered(push_all(items_with_priority))
     raise NotImplementedError("TODO 3")
 
 
